@@ -1,0 +1,42 @@
+{
+  "name": "nearnest-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js",
+    "test": "node run-tests.js",
+    "test:reviews-reports": "node test-reviews-and-reports.js",
+    "test:real": "node test-real-flow.js",
+    "test:geo-media": "node test-geo-media.js",
+    "test:chat": "node test-chat-contact.js",
+    "test:admin": "node --env-file=.env test-admin-edit.js",
+    "test:messages": "node --env-file=.env test-messages-hub.js",
+    "seed": "node src/seed.js",
+    "verify:db": "node verify-db.js",
+    "backup": "node scripts/backup.mjs",
+    "restore:test": "node scripts/restore-test.mjs",
+    "test:additions": "node test-prod-additions.mjs",
+    "test:room-verification:unit": "node test-room-verification-unit.js",
+    "test:room-verification": "node test-room-verification.js",
+    "backfill:ids": "node scripts/backfill-ids.mjs",
+    "backfill:room-locations": "node scripts/backfill-room-locations.mjs",
+    "test:room-location:unit": "node test-room-location-unit.js",
+    "test:room-location": "node test-room-location.js",
+    "test:ratings": "node test-ratings-unit.js",
+    "test:new": "node test-room-location-unit.js && node test-ratings-unit.js && node test-room-location.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^18.0.9",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.11.2",
+    "multer": "^2.4.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^11.3.0"
+  }
+}

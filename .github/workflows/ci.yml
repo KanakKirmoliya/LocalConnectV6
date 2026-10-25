@@ -1,0 +1,50 @@
+name: NearNest CI Quality Gates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  audit-and-test:
+    name: Backend Tests & Frontend Build
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x, 22.x]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          cache-dependency-path: |
+            package-lock.json
+            server/package-lock.json
+            client/package-lock.json
+            mobile/package-lock.json
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          npm install --prefix server
+          npm install --prefix client
+          npm install --prefix mobile --legacy-peer-deps
+
+      - name: Run Backend In-Memory Automated Test Suite
+        run: npm test --prefix server
+        env:
+          NODE_ENV: test
+          JWT_SECRET: test_ci_super_secret_jwt_key_1234567890_min_32_chars
+
+      - name: Run Web Frontend Production Build
+        run: npm run build --prefix client
+
+      - name: Type-check Mobile Application
+        run: npm run typecheck --prefix mobile

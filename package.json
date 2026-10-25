@@ -1,0 +1,20 @@
+{
+  "name": "local-connect",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client && npm install --prefix mobile --legacy-peer-deps",
+    "dev": "concurrently -n api,web -c yellow,cyan \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "dev:all": "concurrently -n api,web,mobile -c yellow,cyan,magenta \"npm run dev --prefix server\" \"npm run dev --prefix client\" \"npm run start --prefix mobile\"",
+    "mobile": "npm run start --prefix mobile",
+    "server": "npm run start --prefix server",
+    "server:dev": "npm run dev --prefix server",
+    "test:server": "npm run test --prefix server",
+    "verify:db": "npm run verify:db --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.9"
+  }
+}

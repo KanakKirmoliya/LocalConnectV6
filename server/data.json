@@ -1,0 +1,40 @@
+{
+  "rooms": [
+    { "id": 1, "title": "Single room, attached bath", "rent": 5500, "owner": "Mr. Rawat", "km": 0.6, "ang": 30, "amenities": ["WiFi", "Water 24x7"], "verified": true },
+    { "id": 2, "title": "Shared 2-bed flat (1 seat left)", "rent": 3800, "owner": "Sunita Devi", "km": 1.2, "ang": 140, "amenities": ["Furnished", "Mess nearby"], "verified": true },
+    { "id": 3, "title": "PG for girls, meals included", "rent": 7200, "owner": "Mrs. Kapoor", "km": 1.9, "ang": 250, "amenities": ["Meals", "CCTV", "Laundry"], "verified": true },
+    { "id": 4, "title": "1BHK near market", "rent": 9000, "owner": "Anil Negi", "km": 3.1, "ang": 320, "amenities": ["Parking", "Balcony"], "verified": false },
+    { "id": 5, "title": "Single room, ground floor", "rent": 4200, "owner": "Mohan Lal", "km": 4.2, "ang": 80, "amenities": ["Water 24x7"], "verified": false }
+  ],
+  "lostfound": [
+    { "id": 1, "kind": "found", "title": "Black wallet with ID card", "where": "Bus stop, main road", "by": "Riya", "km": 0.4, "ang": 200, "minsAgo": 25 },
+    { "id": 2, "kind": "lost", "title": "Silver keychain with 3 keys", "where": "Near the park gate", "by": "Karan", "km": 0.9, "ang": 20, "minsAgo": 90 },
+    { "id": 3, "kind": "found", "title": "Blue umbrella", "where": "Tea stall corner", "by": "Dev", "km": 1.5, "ang": 110, "minsAgo": 240 },
+    { "id": 4, "kind": "lost", "title": "Spectacles in a brown case", "where": "Library lane", "by": "Pooja", "km": 2.4, "ang": 300, "minsAgo": 400 }
+  ],
+  "rentals": [
+    { "id": 1, "name": "Honda Activa 6G", "type": "Scooty", "rate": 60, "owner": "Gupta Rentals", "km": 0.7, "ang": 60, "available": true },
+    { "id": 2, "name": "Royal Enfield Classic 350", "type": "Bike", "rate": 150, "owner": "Hill Wheels", "km": 1.4, "ang": 170, "available": true },
+    { "id": 3, "name": "Maruti Swift", "type": "Car", "rate": 220, "owner": "Rana Cars", "km": 2.2, "ang": 285, "available": false },
+    { "id": 4, "name": "TVS Jupiter", "type": "Scooty", "rate": 55, "owner": "City Rides", "km": 3.3, "ang": 345, "available": true }
+  ],
+  "services": [
+    { "id": 1, "name": "Sanjay Electricals", "trade": "Electrician", "rating": 4.8, "jobs": 212, "price": "from Rs 150", "km": 0.5, "ang": 10, "available": true },
+    { "id": 2, "name": "Raju Auto Works", "trade": "Mechanic", "rating": 4.6, "jobs": 148, "price": "from Rs 200", "km": 1.1, "ang": 95, "available": true },
+    { "id": 3, "name": "Imran Plumbing", "trade": "Plumber", "rating": 4.5, "jobs": 96, "price": "from Rs 180", "km": 1.8, "ang": 215, "available": false },
+    { "id": 4, "name": "Handwritten DSA notes pack", "trade": "Notes", "rating": 4.9, "jobs": 61, "price": "Rs 199", "km": 0.8, "ang": 330, "available": true },
+    { "id": 5, "name": "Engg. Maths solved PYQs", "trade": "Notes", "rating": 4.7, "jobs": 45, "price": "Rs 99", "km": 2.7, "ang": 150, "available": true },
+    { "id": 6, "name": "Vikas Wiring and Fans", "trade": "Electrician", "rating": 4.3, "jobs": 77, "price": "from Rs 120", "km": 3.6, "ang": 260, "available": true }
+  ],
+  "alerts": [
+    { "id": 1, "type": "Stuck", "title": "Scooter broke down on the bypass, need a push or mechanic", "by": "Neha", "km": 1.3, "ang": 120, "minsAgo": 6, "helpers": 2 },
+    { "id": 2, "type": "Blood", "title": "B+ blood needed at the city hospital, today evening", "by": "Aman", "km": 2.6, "ang": 40, "minsAgo": 32, "helpers": 5 },
+    { "id": 3, "type": "Safety", "title": "Stray dog pack near the school lane, avoid after dark", "by": "Mrs. Kapoor", "km": 0.8, "ang": 235, "minsAgo": 70, "helpers": 0 }
+  ],
+  "flags": [
+    { "id": 1, "kind": "account", "target": "user_8842", "reason": "27 rental posts in 1 hour, same photo reused", "posts": 27, "score": 94, "status": "review" },
+    { "id": 2, "kind": "region", "target": "Sector 14 cluster", "reason": "Burst of room listings from new accounts", "posts": 63, "score": 81, "status": "review" },
+    { "id": 3, "kind": "account", "target": "user_1190", "reason": "Lost and found claims with copied proof text", "posts": 9, "score": 67, "status": "review" },
+    { "id": 4, "kind": "account", "target": "user_5521", "reason": "Repeated alerts reported as false by neighbours", "posts": 14, "score": 72, "status": "review" }
+  ]
+}
