@@ -248,15 +248,18 @@ export async function runTests() {
         title: "Hero Splendor Plus",
         description: "Great mileage, available for daily rental",
         locality: "Metro Station Gate 2",
+        photos: [{ url: "/uploads/listings/test-vehicle-photo.jpg", type: "image" }],
         vehicleDetails: {
           vehicleType: "Bike",
           rentalPrice: 80,
           pricingPeriod: "hour",
           available: true,
+          plateNumber: `UP15AB${String(timestamp % 10000).padStart(4, "0")}`,
         },
       }),
     });
-    recordTest("Create Vehicle Listing", vehicleRes.status === 201);
+    const vehicleData = await vehicleRes.json();
+    recordTest("Create Vehicle Listing", vehicleRes.status === 201, vehicleData.error || `status: ${vehicleRes.status}`);
 
     // 8. Create Lost & Found Listing (User 1)
     const lostRes = await fetch(`${BASE_URL}/api/v1/listings`, {

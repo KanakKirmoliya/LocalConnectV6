@@ -66,6 +66,7 @@ export const createListingSchema = z.object({
       rentalPrice: z.number().nonnegative().optional(),
       pricingPeriod: z.string().optional().default("hour"),
       available: z.boolean().optional().default(true),
+      plateNumber: z.string().trim().optional(),
     })
     .optional(),
   lostFoundDetails: z
